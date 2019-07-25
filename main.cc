@@ -31,11 +31,11 @@ void say_hello(Mood mood, int level) {
 }
 
 int main() {
-    say_hello(Mood::Excited, -1);
-    say_hello(Mood::Excited, 100);
-    say_hello(Mood::Excited, 10000);
-    say_hello(Mood::Neutral, 0);
-    say_hello(Mood::Sad, 100);
+    print(30);
+    print(30);
+    print(30);
+    print(30);
+    print(30);
     print(30);
     return 0;
 }
