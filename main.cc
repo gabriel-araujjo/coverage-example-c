@@ -1,3 +1,6 @@
+
+#include "print.hh"
+
 #include <iostream>
 
 enum class Mood {
@@ -7,7 +10,10 @@ enum class Mood {
     Excited
 };
 
-void say_hello(Mood mood) {
+void say_hello(Mood mood, int level) {
+    if (mood == Mood::Neutral || level < 0 || mood == Mood::Excited && level > 1000)
+        std::cout << "Oh no!" << '\n';
+
     switch(mood) {
     case Mood::Sad: 
 	std::cout << "Hello 😔\n";
@@ -25,6 +31,11 @@ void say_hello(Mood mood) {
 }
 
 int main() {
-    say_hello(Mood::Neutral);
+    say_hello(Mood::Excited, -1);
+    say_hello(Mood::Excited, 100);
+    say_hello(Mood::Excited, 10000);
+    say_hello(Mood::Neutral, 0);
+    say_hello(Mood::Sad, 100);
+    print(30);
     return 0;
 }
